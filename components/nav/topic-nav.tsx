@@ -1,6 +1,6 @@
-import { Card } from "./ui/card";
+import { Card } from "../ui/card";
 import { cn } from "@/lib/utils";
-import { Badge } from "./ui/badge";
+import { Badge } from "../ui/badge";
 
 const tags = [
   {
@@ -13,7 +13,11 @@ const tags = [
 export default function TopicNav() {
   return (
     <>
-      <Card className={cn("flex flex-row gap-2 border-none max-w-3xl w-full")}>
+      <Card
+        className={cn(
+          "flex flex-row gap-2 border-none max-w-3xl w-full flex-wrap"
+        )}
+      >
         <Badge>All</Badge>
         {tags.map((tag, index) => (
           <Badge key={index} className="bg-muted text-foreground">

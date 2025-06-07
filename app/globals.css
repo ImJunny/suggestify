@@ -88,7 +88,7 @@
   --background-variant-other: rgb(22, 22, 22);
   --bar: rgba(16, 16, 16, 1);
   --foreground: rgba(251, 251, 251, 1);
-  --card: rgba(45, 45, 45, 0.6);
+  --card: rgba(45, 45, 45, 1);
   --card-foreground: rgba(251, 251, 251, 1);
   --popover: rgba(53, 53, 53, 1);
   --popover-foreground: rgba(251, 251, 251, 1);
@@ -122,6 +122,11 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
   body {
     @apply bg-background text-foreground;

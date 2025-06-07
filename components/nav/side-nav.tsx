@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 
 type NavOption = {
   name: string;
@@ -37,7 +37,7 @@ export default function SideNav() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-background-variant-other p-4 min-w-68 fixed h-full z-10 flex flex-col gap-4">
+    <div className="fixed z-2 bg-background-variant-other py-2 px-2 md:min-w-56 flex h-full flex-col gap-2">
       <NavOptions data={mainNavOptions} route={pathname} />
       <Separator />
       <NavOptions data={socialNavOptions} route={pathname} />
@@ -62,7 +62,7 @@ function NavOptions({ data, route }: { data: NavOption[]; route: string }) {
             )}
           >
             {option.icon}
-            {option.name}
+            <span className="md:block hidden text-sm  ">{option.name}</span>
           </Link>
         </li>
       ))}

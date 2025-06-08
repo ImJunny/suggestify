@@ -1,6 +1,13 @@
 import Post from "./post";
 
-const posts = [
+export type PostData = {
+  username: string;
+  title: string;
+  timestamp: string;
+  tags: string[];
+  content?: string; // 'playlist' or text content
+};
+export const posts: PostData[] = [
   {
     username: "johnsmith",
     title: "Chill songs to listen to while driving",

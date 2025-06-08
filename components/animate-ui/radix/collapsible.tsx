@@ -90,9 +90,9 @@ function CollapsibleContent({
             key="collapsible-content"
             data-slot="collapsible-content"
             layout
-            initial={{ opacity: 0, height: 0, overflow: "hidden" }}
-            animate={{ opacity: 1, height: "auto", overflow: "hidden" }}
-            exit={{ opacity: 0, height: 0, overflow: "hidden" }}
+            initial={{ height: 0, overflow: "hidden" }}
+            animate={{ height: "auto", overflow: "hidden" }}
+            exit={{ height: 0, overflow: "hidden" }}
             transition={transition}
             className={className}
             {...props}

@@ -2,6 +2,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -14,7 +15,8 @@ export default function ProfileDropdown() {
       <DropdownMenuContent>
         <DropdownMenuItem>View Profile</DropdownMenuItem>
         <DropdownMenuItem>Settings</DropdownMenuItem>
-        <DropdownMenuItem>Logout</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem className="text-red-500">Log out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

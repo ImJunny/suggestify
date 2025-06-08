@@ -6,7 +6,13 @@ export function Controls() {
     <>
       <Stage />
       <div className="flex items-center bg-bar fixed bottom-0 left-0 right-0 z-10 p-2">
-        <div className="w-14 h-14 bg-muted rounded-xs" />
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 bg-muted rounded-xs" />
+          <div className="flex flex-col">
+            <span className="text-xs">Song Title</span>
+            <span className="text-muted-foreground text-xs">Artist Name</span>
+          </div>
+        </div>
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
           <div className="flex gap-5 items-center">

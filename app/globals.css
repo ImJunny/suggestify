@@ -85,7 +85,7 @@
 .dark {
   --background: rgba(12, 12, 12, 1);
   --background-variant: rgba(48, 48, 48, 1);
-  --background-variant-other: rgb(22, 22, 22);
+  --background-variant-other: rgb(29, 29, 29);
   --bar: rgba(16, 16, 16, 1);
   --foreground: rgba(251, 251, 251, 1);
   --card: rgba(45, 45, 45, 1);

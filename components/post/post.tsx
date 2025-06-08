@@ -25,7 +25,7 @@ type PostProps = {
 export default function Post({ data }: PostProps) {
   return (
     <Link href="/">
-      <Card className="hover:bg-card/65">
+      <Card className="hover:bg-card/70">
         <div className="flex items-center text-xs mb-2">
           <div className="w-6 h-6 bg-muted-foreground rounded-4xl" />
           <div className="ml-2">

@@ -15,7 +15,7 @@ export default function TopicNav() {
     <>
       <Card
         className={cn(
-          "flex flex-row gap-2 border-none max-w-3xl w-full flex-wrap"
+          "flex w-full max-w-3xl flex-row flex-wrap gap-2 border-none",
         )}
       >
         <Badge>All</Badge>

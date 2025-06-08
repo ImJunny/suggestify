@@ -63,18 +63,18 @@ export default function Stage() {
     <Collapsible
       open={open}
       onOpenChange={setOpen}
-      className="fixed z-11 flex flex-col items-end bottom-16 right-0 md:right-6"
+      className="fixed right-0 bottom-16 z-11 flex flex-col items-end md:right-2"
     >
       <CollapsibleTrigger>
-        <div className="flex flex-row justify-between bg-background-variant-other p-2 rounded-t-md items-center w-80">
-          <div className="text-xs ">
+        <div className="bg-background-variant-other flex w-80 flex-row items-center justify-between rounded-t-md p-2">
+          <div className="text-xs">
             <span>Staged Songs</span>
             <span className="text-muted-foreground"> • {songs.length}</span>
           </div>
           <ChevronUp
             className={cn(
-              "hover:cursor-pointer duration-300 text-muted-foreground",
-              open ? "rotate-180" : ""
+              "text-muted-foreground duration-300 hover:cursor-pointer",
+              open ? "rotate-180" : "",
             )}
           />
         </div>
@@ -83,8 +83,8 @@ export default function Stage() {
         <div className="bg-background-variant-other px-2">
           <ScrollArea
             className={cn(
-              "h-91 overflow-hidden bg-bar flex flex-col rounded-sm mb-2",
-              songs.length > 7 ? "pr-2" : ""
+              "bg-bar mb-2 flex h-91 flex-col overflow-hidden rounded-sm",
+              songs.length > 7 ? "pr-2" : "",
             )}
           >
             {songs.length > 0 ? (
@@ -93,10 +93,10 @@ export default function Stage() {
                   <div
                     key={index}
                     className={cn(
-                      "pr-4 group flex flex-row gap-2 items-center p-2 hover:bg-background-variant/70"
+                      "group hover:bg-background-variant/70 flex flex-row items-center gap-2 p-2 pr-4",
                     )}
                   >
-                    <div className="w-9 h-9 bg-muted rounded-xs hover:cursor-pointer" />
+                    <div className="bg-muted h-9 w-9 rounded-xs hover:cursor-pointer" />
                     <div className="flex flex-col text-xs">
                       <span>{song.title}</span>
                       <span className="text-muted-foreground">
@@ -105,14 +105,14 @@ export default function Stage() {
                     </div>
                     <CircleMinus
                       size={16}
-                      className="ml-auto group-hover:block hidden text-foreground/60 hover:text-foreground hover:cursor-pointer mr-2"
+                      className="text-foreground/60 hover:text-foreground mr-2 ml-auto hidden group-hover:block hover:cursor-pointer"
                       onClick={() => {
                         setSongs((prev) => prev.filter((_, i) => i !== index));
                         // Optionally update count if needed
                       }}
                     />
                     <Checkbox
-                      className="group-hover:ml-0 ml-auto hover:cursor-pointer"
+                      className="ml-auto group-hover:ml-0 hover:cursor-pointer"
                       onCheckedChange={(checked) => {
                         setCount((prev) => prev + (checked ? 1 : -1));
                       }}
@@ -121,7 +121,7 @@ export default function Stage() {
                 ))}
               </div>
             ) : (
-              <p className="text-xs text-muted-foreground m-2">
+              <p className="text-muted-foreground m-2 text-xs">
                 No songs staged yet. You can stage songs you find and save them
                 to your own playlists.
               </p>

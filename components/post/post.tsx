@@ -26,17 +26,17 @@ export default function Post({ data }: PostProps) {
   return (
     <Link href="/">
       <Card className="hover:bg-card/70">
-        <div className="flex items-center text-xs mb-2">
-          <div className="w-6 h-6 bg-muted-foreground rounded-4xl" />
+        <div className="mb-2 flex items-center text-xs">
+          <div className="bg-muted-foreground h-6 w-6 rounded-4xl" />
           <div className="ml-2">
             <span>@{data.username}</span>
             <span className="text-muted-foreground"> • {data.timestamp}</span>
           </div>
         </div>
 
-        <h1 className="font-semibold text-lg">{data.title}</h1>
+        <h1 className="text-lg font-semibold">{data.title}</h1>
         {data.tags.length > 0 && (
-          <div className="flex gap-2 mt-2">
+          <div className="mt-2 flex gap-2">
             <Badge>{data.tags[0]}</Badge>
             {data.tags.slice(1).map((tag, index) => (
               <Badge key={index} className="bg-muted text-foreground">
@@ -49,10 +49,10 @@ export default function Post({ data }: PostProps) {
         {data.content === "playlist" ? (
           <SmallPlaylist className="mt-4" />
         ) : (
-          <p className="text-xs mt-2 text-muted-foreground">{data.content}</p>
+          <p className="text-muted-foreground mt-2 text-xs">{data.content}</p>
         )}
 
-        <div className="flex items-center gap-4 text-xs mt-4">
+        <div className="mt-4 flex items-center gap-4 text-xs">
           <div className="flex items-center gap-2">
             <Heart size={18} /> 1
           </div>
@@ -76,13 +76,13 @@ function SmallPlaylist({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <Card
-      className={cn("max-w-lg bg-violet-950 flex flex-row gap-4", className)}
+      className={cn("flex max-w-lg flex-row gap-4 bg-violet-950", className)}
       {...props}
     >
-      <div className="w-26 h-26 bg-violet-900 rounded-sm" />
+      <div className="h-26 w-26 rounded-sm bg-violet-900" />
       <div>
         <h1 className="text-xl font-semibold">100%</h1>
-        <span className="text-xs text-foreground/80">203 songs</span>
+        <span className="text-foreground/80 text-xs">203 songs</span>
         <div className="text-xs">
           <div>
             <span>The Prologue</span>
@@ -98,7 +98,7 @@ function SmallPlaylist({
           </div>
         </div>
       </div>
-      <div className="ml-auto self-end rounded-full bg-white h-10 w-10 flex items-center justify-center">
+      <div className="ml-auto flex h-10 w-10 items-center justify-center self-end rounded-full bg-white">
         <Play fill="black" stroke="none" />
       </div>
     </Card>

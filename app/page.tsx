@@ -7,20 +7,20 @@ import RecentlyViewed from "@/components/home/recently-viewed";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen mt-14">
+    <main className="mt-14 flex min-h-screen flex-col">
       <Nav />
-      <div className="flex h-full w-full bg-background">
+      <div className="bg-background flex h-full w-full">
         <div className="fixed inset-0 -z-10 bg-white" />
         <div
-          className={`fixed inset-0 z-0 bg-gradient-to-t from-background via-background to-violet-950/80`}
+          className={`from-background via-background fixed inset-0 z-0 bg-gradient-to-t to-violet-950/80`}
         />
 
         <SideNav />
         <div className="absolute z-1 flex w-full justify-center gap-2 pr-2 pb-16">
-          <div className="max-w-3xl w-full my-2 ml-16 md:ml-58 flex flex-col gap-2">
+          <div className="my-2 ml-16 flex w-full max-w-3xl flex-col gap-2 md:ml-58 lg:ml-72">
             <Posts />
           </div>
-          <div className="sticky top-16 hidden sm:flex flex-col self-start max-w-xs w-full gap-2 ">
+          <div className="sticky top-16 hidden w-full max-w-xs flex-col gap-2 self-start lg:flex">
             <TopicNav />
             <RecentlyViewed />
           </div>

@@ -11,4 +11,18 @@ export const root = {
     await connectDB();
     return await User.findOne({ username }).lean();
   },
+  createUser: async ({
+    username,
+    email,
+    age,
+  }: {
+    username: string;
+    email: string;
+    age?: number;
+  }) => {
+    await connectDB();
+    const user = new User({ username, email, age });
+    await user.save();
+    return user.toObject();
+  },
 };

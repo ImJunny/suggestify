@@ -37,7 +37,7 @@ export default function SideNav() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed z-2 bg-background-variant-other py-2 px-2 md:min-w-56 flex h-full flex-col gap-2">
+    <div className="bg-background-variant-other fixed z-2 flex h-full flex-col gap-2 px-2 py-2 md:min-w-56 lg:min-w-70">
       <NavOptions data={mainNavOptions} route={pathname} />
       <Separator />
       <NavOptions data={socialNavOptions} route={pathname} />
@@ -55,14 +55,14 @@ function NavOptions({ data, route }: { data: NavOption[]; route: string }) {
           <Link
             href={option.href}
             className={cn(
-              "flex gap-5 items-center py-2 px-2 rounded-sm text-sm text-muted-foreground",
+              "text-muted-foreground flex items-center gap-5 rounded-sm px-2 py-2 text-sm",
               route === option.href
                 ? "bg-background-variant text-foreground"
-                : "hover:bg-background-variant/70 hover:text-foreground"
+                : "hover:bg-background-variant/70 hover:text-foreground",
             )}
           >
             {option.icon}
-            <span className="md:block hidden text-sm  ">{option.name}</span>
+            <span className="hidden text-sm md:block">{option.name}</span>
           </Link>
         </li>
       ))}

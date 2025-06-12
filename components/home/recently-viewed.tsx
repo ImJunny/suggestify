@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function RecentlyViewed() {
   return (
     <Card className="p-0">
-      <div className="mb-2 flex items-center justify-between px-4 pt-4 text-xs">
+      <div className="mb-2 flex items-center justify-between px-3 pt-3 text-xs">
         <span>Recents</span>
         <span className="text-muted-foreground hover:cursor-pointer hover:underline">
           Clear
@@ -24,8 +24,8 @@ export default function RecentlyViewed() {
 function RecentPost({ post, index }: { post: PostData; index: number }) {
   return (
     <Link href={`/post`}>
-      <div className="hover:bg-card/70">
-        <div className="mx-4 flex items-center pt-4 text-xs">
+      <div className="hover:bg-white/3">
+        <div className="mx-3 flex items-center pt-4 text-xs">
           <div className="bg-muted-foreground h-6 w-6 rounded-4xl" />
           <div className="ml-2">
             <span>@{post.username}</span>

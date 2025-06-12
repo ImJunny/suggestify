@@ -9,8 +9,8 @@ function Card({ className, ...props }: CardProps) {
     <div
       data-slot="card"
       className={cn(
-        "bg-card/60 text-card-foreground flex flex-col p-3 rounded-md",
-        className
+        "bg-card/60 text-card-foreground flex flex-col rounded-md p-4",
+        className,
       )}
       {...props}
     />

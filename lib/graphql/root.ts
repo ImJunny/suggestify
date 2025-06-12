@@ -1,7 +1,7 @@
 import { User } from "@/lib/models/User";
 import { connectDB } from "@/lib/mongoose";
 
-// GQL resolver; used by schema.ts
+// resolver
 export const root = {
   users: async () => {
     await connectDB();

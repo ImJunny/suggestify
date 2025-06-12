@@ -12,7 +12,7 @@ export default function Home() {
       <div className="bg-background flex h-full w-full">
         <div className="fixed inset-0 -z-10 bg-white" />
         <div
-          className={`from-background via-background fixed inset-0 z-0 bg-gradient-to-t to-violet-950/80`}
+          className={`from-background via-background fixed inset-0 z-0 bg-gradient-to-t to-zinc-600/80`}
         />
 
         <SideNav />

@@ -5,7 +5,7 @@ export function Controls() {
   return (
     <>
       <Stage />
-      <div className="bg-bar fixed right-0 bottom-0 left-0 z-10 flex items-center justify-between p-2 px-4">
+      <div className="bg-bar fixed right-0 bottom-0 left-0 z-10 flex items-center justify-between p-2 px-2">
         <div className="flex min-w-0 flex-1 shrink-0 items-center space-x-3">
           <div className="bg-muted h-12 w-12 rounded-xs" />
           <div className="flex flex-col truncate">

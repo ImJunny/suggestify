@@ -1,31 +1,29 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { graphql } from "graphql";
-import { NextRequest, NextResponse } from "next/server";
-import { schema } from "@/lib/graphql/schema";
-import { root } from "@/lib/graphql/root";
+// // Next.js Custom Route Handler: https://nextjs.org/docs/app/building-your-application/routing/router-handlers
+// import { createSchema, createYoga } from 'graphql-yoga'
 
-export async function POST(req: NextRequest) {
-  const { query, variables } = await req.json();
+// interface NextContext {
+//   params: Promise<Record<string, string>>
+// }
 
-  try {
-    const result = await graphql({
-      schema,
-      source: query,
-      rootValue: root,
-      variableValues: variables,
-    });
+// const { handleRequest } = createYoga<NextContext>({
+//   schema: createSchema({
+//     typeDefs: /* GraphQL */ `
+//       type Query {
+//         greetings: String
+//       }
+//     `,
+//     resolvers: {
+//       Query: {
+//         greetings: () => 'This is the `greetings` field of the root `Query` type'
+//       }
+//     }
+//   }),
 
-    return NextResponse.json(result);
-  } catch (error: any) {
-    return NextResponse.json(
-      { errors: [{ message: error.message }] },
-      { status: 500 }
-    );
-  }
-}
+//   // While using Next.js file convention for routing, we need to configure Yoga to use the correct endpoint
+//   graphqlEndpoint: '/api/graphql',
 
-export async function GET() {
-  return NextResponse.json({
-    message: "Send POST requests with GraphQL queries here.",
-  });
-}
+//   // Yoga needs to know how to create a valid Next response
+//   fetchAPI: { Response }
+// })
+
+// export { handleRequest as GET, handleRequest as POST, handleRequest as OPTIONS }

@@ -3,11 +3,11 @@ import ProfileDropdown from "./profile-dropdown";
 
 export function Nav() {
   return (
-    <nav className="bg-bar w-full h-14 flex items-center justify-center fixed top-0 z-50">
-      <h1 className="absolute left-2 text-xl font-semibold hidden md:block">
+    <nav className="bg-bar fixed top-0 z-50 flex h-14 w-full items-center justify-center">
+      <h1 className="absolute left-4 hidden text-xl font-semibold md:block">
         Suggestify
       </h1>
-      <div className="h-9 md:max-w-lg mx-2 flex-grow-1 bg-background-variant rounded-full text-xs text-muted-foreground flex items-center gap-2 px-3">
+      <div className="bg-background-variant text-muted-foreground mx-2 flex h-9 flex-grow-1 items-center gap-2 rounded-full px-3 text-xs md:max-w-lg">
         <Search size={20} /> Search
       </div>
       <ProfileDropdown />
